@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Details | GiftQcode</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="product-details">
+  <img id="productImage" src="">
+  <h2 id="productTitle"></h2>
+  <p id="productDesc"></p>
+  <a id="buyLink" href="#" target="_blank" class="btn">Go to Merchant</a>
+</section>
+
+<footer class="footer">
+  <a href="disclosure.html">Affiliate Disclosure</a>
+</footer>
+
+<script>
+const products = {
+  ps:{title:"PlayStation",desc:"Top up your PlayStation wallet.",image:"images/ps.png",link:"AFFILIATE_LINK_PS"},
+  xbox:{title:"XBOX",desc:"Top up your XBOX wallet.",image:"images/xbox.png",link:"AFFILIATE_LINK_XBOX"},
+  steam:{title:"STEAM®",desc:"Buy games and content on STEAM.",image:"images/steam.png",link:"AFFILIATE_LINK_STEAM"},
+  roblox:{title:"ROBLOX",desc:"Buy Robux and items on Roblox.",image:"images/roblox.png",link:"AFFILIATE_LINK_ROBLOX"},
+  itunes:{title:"iTunes",desc:"Top up your iTunes account.",image:"images/itunes.png",link:"AFFILIATE_LINK_ITUNES"},
+  googleplay:{title:"Google Play",desc:"Buy apps, games & subscriptions.",image:"images/googleplay.png",link:"AFFILIATE_LINK_GOOGLEPLAY"},
+  yallaludo:{title:"Yalla Ludo",desc:"Play Yalla Ludo online.",image:"images/yallaludo.png",link:"AFFILIATE_LINK_YALLALUDO"},
+  lodostar:{title:"Ludo Star",desc:"Play Ludo Star online.",image:"images/lodostar.png",link:"AFFILIATE_LINK_LODOSTAR"},
+  netflix:{title:"Netflix",desc:"Stream movies & series.",image:"images/netflix.png",link:"AFFILIATE_LINK_NETFLIX"},
+  talabat:{title:"Talabat",desc:"Order food online.",image:"images/talabat.png",link:"AFFILIATE_LINK_TALABAT"},
+  lulu:{title:"Lulu Hypermarket",desc:"Shop groceries & more.",image:"images/lulu.png",link:"AFFILIATE_LINK_LULU"},
+  ikea:{title:"Ikea",desc:"Buy furniture & home products.",image:"images/ikea.png",link:"AFFILIATE_LINK_IKEA"},
+  marriott:{title:"Marriott Bonvoy",desc:"Book hotels and travel.",image:"images/marriott.png",link:"AFFILIATE_LINK_MARRIOTT"}
+};
+const params = new URLSearchParams(window.location.search);
+const item = params.get("item");
+if(products[item]){
+  document.getElementById("productTitle").innerText = products[item].title;
+  document.getElementById("productDesc").innerText = products[item].desc;
+  document.getElementById("productImage").src = products[item].image;
+  document.getElementById("buyLink").href = products[item].link;
+}
+</script>
+
+</body>
+</html>
